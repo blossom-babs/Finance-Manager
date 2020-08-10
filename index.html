@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/b527bec78a.js" crossorigin="anonymous"></script>
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <div class="container div-body">
+
+        <header>
+            <h1>My Finance Buddy</h1>
+        </header>
+
+        <div id="budget-warning" class="d-none div-warning">
+            <p>Budget cannot be empty or contain negative values</p>
+        </div>
+
+        <div class="div-budget">
+            <form id="budget-form" class="budget-form" action="">
+                <div>
+                    <label for="budget">What is your budget?</label>
+                </div>
+                <div>
+                    <input class="form-control" type="text" name="budget-input" id="budget-input" autocomplete="off">
+                </div>
+                <div>
+                    <button class="btn btn-lg btn-outline-primary" type="submit">Enter</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="finance-output">
+            <div class="budget-output">
+                <div>Budget: </div>
+                <div id="budget-output">0</div>
+            </div>
+            <div class="expenses-output">
+                <div>Expenses: </div>
+                <div id="expenses-output">0</div>
+            </div>
+            <div class="balance-output">
+                <div>Balance: </div>
+                <div id="balance-output">0</div>
+            </div>
+        </div>
+
+        <div id="expense-warning" class="d-none div-warning">
+            <p>Values cannot be empty or negative</p>
+        </div>
+
+        <div class="div-expenses card mb-4">
+            <form id="expense-form" class="expense-form" action="">
+                <div>
+                    <label for="">What is your expense?</label>
+                    <input type="text" name="expense-name" id="expense-name">
+                </div>
+                <div>
+                    <label for="">How much?</label>
+                    <input type="text" name="expense-amount" id="expense-amount">
+                </div>
+                <div>
+                    <button class="btn btn-lg btn-outline-primary" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="expense-list" class="expense-list">
+                <h5>Item</h5>
+                <h5>Amount</h5>
+        </div>
+        
+        <div id='single-expense' class="single-expense">
+            <div class="holder" id="exp-names">sth</div>
+            <div class="holder" id="exp-amts">sth</div>
+            <div class="holder">sth</div>
+            <div class="holder">sth</div>
+        </div>
+
+
+    </div>
+</body>
+                                                                                                                          
+</html>

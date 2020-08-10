@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.div-budget {
+  display: flex;
+  justify-content: center;
+}
+
+.div-warning {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.finance-output {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2rem 0;
+  margin-left: 2rem;
+}
+
+.div-expenses {
+  margin-right: 0;
+  padding: 2rem;
+}
+
+.expense-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  margin-top: 2rem;
+}
+
+.single-expense {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: #ff0000;
+}
+/*# sourceMappingURL=styles.css.map */
