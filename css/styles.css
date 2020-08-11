@@ -49,6 +49,5 @@ header {
 .single-expense {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  color: #ff0000;
 }
 /*# sourceMappingURL=styles.css.map */
