@@ -1,0 +1,1 @@
+1. render colors of balance dynamically not working

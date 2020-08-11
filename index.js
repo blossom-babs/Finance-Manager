@@ -40,13 +40,17 @@ class UI {
         const expense = this.totalExpense()
         this.balance.innerHTML = Number(this.budgetOutput.textContent) - expense
 
-        if (this.balance.textContent === 0) {
-            this.balance.style.color = '#000';
-        } else if (this.balance.textContent < 0) {
-            this.balance.style.color = '#ff0000';
-        } else if (this.balance.textContent > 0) {
-            this.balance.style.color = '#008000';
-            //  console.log(`the green is working`)
+        const thisBalance = Number(this.balance.innerHTML)
+
+        if (thisBalance === 0) {
+            this.balance.classList.remove('red', 'green');
+            this.balance.classList.add('white');
+        } else if (thisBalance < 0) {
+            this.balance.classList.remove('white', 'green');
+            this.balance.classList.add('red');
+        } else if (thisBalance > 0) {
+            this.balance.classList.remove('red', 'white');
+            this.balance.classList.add('green');
         }
     }
 
@@ -123,7 +127,7 @@ class UI {
         this.expenseName.value = expense[0].title
         this.expenseAmt.value = expense[0].amount
 
-        let tempList = this.itemList.filter( (item)=> {
+        let tempList = this.itemList.filter((item) => {
             return item.id !== id
         })
         this.itemList = tempList
@@ -138,7 +142,7 @@ class UI {
         const id = Number(el.dataset.id)
         // console.log(el.dataset.id)
         this.expenseList.removeChild(parent)
-        let tempList = this.itemList.filter( (item)=> {
+        let tempList = this.itemList.filter((item) => {
             return item.id !== id
         })
         this.itemList = tempList
@@ -152,6 +156,12 @@ function eventListeners() {
     const budgetForm = document.getElementById("budget-form");
     const expenseForm = document.getElementById('expense-form')
     const expenseList = document.getElementById('single-expense')
+    const displayExpense = document.getElementById('div--expenses')
+    const expense = document.getElementById('dashboard-expenses')
+    const displayIncome = document.getElementById('div--income')
+    const income = document.getElementById('dashboard-income')
+    const displayAll = document.getElementById('div--all')
+    const all = document.getElementById('dashboard-all')
 
     // instantiating the ui class
     const ui = new UI();
@@ -175,6 +185,28 @@ function eventListeners() {
         } else if (e.target.classList.contains('delete-exp')) {
             ui.deleteExpense(e)
         }
+    })
+
+    //display expense
+    expense.addEventListener('click', () => {
+        displayAll.classList.add('d-none')
+        displayIncome.classList.add('d-none')
+        displayExpense.classList.remove('d-none')
+    })
+
+    //display income
+    income.addEventListener('click', () => {
+        console.log(`income was clicked`)
+        displayAll.classList.add('d-none')
+        displayExpense.classList.add('d-none')
+        displayIncome.classList.remove('d-none')
+    })
+
+    //display all expenses
+    all.addEventListener('click', () => {
+        displayExpense.classList.add('d-none')
+        displayIncome.classList.add('d-none')
+        displayAll.classList.remove('d-none')
     })
 
 }

@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+
+$font: 'Baloo Tamma 2',
+cursive;
+$blue: #0000ff;
+$white: #fff;
+$black: #000;
+$red: #ff0000;
+$green: #99FF00;
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +23,131 @@ body {
     height: 100%;
 }
 
+
+body {
+    background-color: $blue;
+    color: $white;
+    font-family: $font;
+}
+
+.span {
+    color: $green;
+}
+
+// header
+
+header {
+    display: flex;
+    justify-content: center;
+    // height: 50vh;
+    margin: 5rem 0;
+}
+
+// balance output
+
+.balance-output {
+    position: relative;
+    margin-bottom: 5rem;
+
+    .bal-output {
+        position: absolute;
+        left: 3rem;
+
+    }
+
+    .white {
+        color: $white;
+    }
+
+    .red {
+        color: $red;
+    }
+
+    .green {
+        color: $green;
+    }
+
+    span {
+        padding-left: 1rem;
+        font-weight: bold;
+        letter-spacing: .5rem;
+        font-size: 1.5rem;
+    }
+}
+
+// finance output
+.finance-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 7rem 0 4rem 0;
+    margin-left: 3rem;
+
+    h1 {
+        font-size: 1rem;
+        color: #c4c4c4;
+    }
+
+    i{
+        color: #c4c4c4;
+    }
+
+    span{
+        padding-left: 1rem;
+    }
+}
+
+// white-section
+
+.white-section{
+    background-color: $white;
+    color: $black;
+    padding: 2rem;
+    height: 50vh;
+    margin-bottom: .5rem;
+
+    .dashboard{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        h1{
+            font-size: 1.3rem;
+
+            &:hover{
+                text-decoration: underline;
+                text-decoration-color: $blue;
+                cursor: pointer;
+            }
+        }
+    }
+
+    // expenses
+
+    .div--expenses{
+        position: relative;
+
+        .div-expenses{
+        //  display: grid;
+        //  grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        justify-content: space-evenly;
+         position: fixed;
+         bottom: 2rem;
+
+         input{
+             width: 40%;
+             border: $white;
+
+             &:focus{
+                 border: none none 2px solid black none;
+             }
+         }
+        }
+    }
+}
+
 // budget form
 
-.div-budget{
+.div-budget {
     display: flex;
     justify-content: center;
 }
@@ -24,43 +156,3 @@ body {
     background-color: #ff0000;
     color: #fff;
 }
-
-.finance-output {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 2rem 0;
-  margin-left: 2rem;
-
-}
-
-.div-expenses {
-    margin-right: 0;
-    padding: 2rem;
-}
-
-.expense-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-// header
-
-header {
-    display: flex;
-    justify-content: center;
-    height: 50vh;
-    margin-top: 2rem;
-}
-
-// single expenses
-
-.single-expense{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-right: 2rem;
-   // color: #ff0000;
-}
-
-// .holder{
-//     visibility: hidden;
-// }
