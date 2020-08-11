@@ -120,7 +120,7 @@ class UI {
         const el = element.target.parentElement
         const parent = el.parentElement
         const id = Number(el.dataset.id)
-        // console.log(el.dataset.id)
+        console.log(el.dataset.id)
         this.expenseList.removeChild(parent)
 
         let expense = this.itemList.filter((item) => {
@@ -157,7 +157,7 @@ class UI {
 function eventListeners() {
     const budgetForm = document.getElementById("budget-form");
     const expenseForm = document.getElementById('expense-form')
-    const expenseList = document.getElementById('single-expense')
+    const expenseList = document.getElementById('expense-list')
     const displayExpense = document.getElementById('div--expenses')
     const expense = document.getElementById('dashboard-expenses')
     const displayIncome = document.getElementById('div--income')
@@ -182,6 +182,7 @@ function eventListeners() {
 
     // edit and delete buttons
     expenseList.addEventListener('click', (e) => {
+        console.log(e.target)
         if (e.target.classList.contains('edit-exp')) {
             ui.editExpense(e)
         } else if (e.target.classList.contains('delete-exp')) {
