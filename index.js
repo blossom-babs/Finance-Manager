@@ -11,7 +11,7 @@ class UI {
         this.expenseName = document.getElementById('expense-name')
         this.expenseAmt = document.getElementById('expense-amount')
         this.expenseWarning = document.getElementById('expense-warning')
-        this.expenseList = document.getElementById('single-expense')
+        this.expenseList = document.getElementById('expense-list')
         this.balance = document.getElementById('balance-output')
         this.itemList = []
         this.itemID = 0
@@ -103,12 +103,14 @@ class UI {
     addExpense(expenseObj) {
         //  console.log(`add expense is working`)
         const newDiv = document.createElement('div')
-        newDiv.classList.add('single-expense')
+        newDiv.classList.add('singleton-expenses')
         newDiv.innerHTML = `
-        <div class='exp-name' id="exp-names">${expenseObj.title}</div>
-        <div class='exp-amt' id="exp-amts">${expenseObj.amount}</div>
-        <div data-id=${expenseObj.id}><i class="fas fa-edit edit-exp"></i></div>
-        <div data-id=${expenseObj.id}><i class="fas fa-trash delete-exp"></i></div>
+        
+        <h6>${expenseObj.title}</h6>
+        <h6>${expenseObj.amount}</h6>
+        <a data-id=${expenseObj.id}><i class="fas fa-edit edit-exp"></i></a>
+        <a data-id=${expenseObj.id}><i class="fas fa-trash delete-exp"></i></a>
+
         `
         this.expenseList.appendChild(newDiv)
     }

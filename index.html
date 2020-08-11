@@ -76,16 +76,15 @@
             <hr>
 
             <div id='div--expenses' class="div--expenses">
-                <div id="expense-list" class="expense-list">
-                    <h5>Item</h5>
-                    <h5>Amount</h5>
+                <div id="expense-list">
+                <div id="single-expense" class='singleton-expenses'>
+                    <!-- <h2>sth</h2>
+                    <h2>sth</h2>
+                    <p>sth</p>
+                    <a>sth</a> -->
                 </div>
-                <div id="single-expense" class="single-expense">
-                    <div class="holder" id="exp-names"></div>
-                    <div class="holder" id="exp-amts"></div>
-                    <div class="holder"></div>
-                    <div class="holder"></div>
-                </div>
+            </div>
+
                 <div id="expense-warning" class="d-none div-warning">
                     <p>Values cannot be empty or negative</p>
                 </div>
@@ -93,7 +92,7 @@
                     <div>
                         <form id="expense-form" class="expense-form" action="">
                             <input placeholder="Enter item:" type="text" name="expense-name" id="expense-name" />
-                            <input placeholder="Amount" type="text" name="expense-amount" id="expense-amount" />
+                            <input placeholder="Amount:" type="text" name="expense-amount" id="expense-amount" />
                             <button class="btn btn-sm btn-outline-primary" type="submit"><i class='fas fa-plus'></i></button>
                         </form>
                     </div>

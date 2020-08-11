@@ -102,7 +102,7 @@ header {
     background-color: $white;
     color: $black;
     padding: 2rem;
-    height: 50vh;
+    max-height: 100%;
     margin-bottom: .5rem;
 
     .dashboard{
@@ -125,20 +125,27 @@ header {
     .div--expenses{
         position: relative;
 
+        .singleton-expenses{
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+            //padding: 0 2rem;
+        }
+
         .div-expenses{
         //  display: grid;
         //  grid-template-columns: 1fr 1fr 1fr;
         display: flex;
         justify-content: space-evenly;
-         position: fixed;
-         bottom: 2rem;
+        // position: fixed;
+        // bottom: 2rem;
 
          input{
              width: 40%;
              border: $white;
 
              &:focus{
-                 border: none none 2px solid black none;
+                 outline-color: $white;
+                 border-bottom: 2px solid #c4c4c4;
              }
          }
         }
@@ -155,4 +162,12 @@ header {
 .div-warning {
     background-color: #ff0000;
     color: #fff;
+}
+
+
+// span-across
+
+.span-across{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
 }

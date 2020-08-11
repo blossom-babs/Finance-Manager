@@ -82,7 +82,7 @@ header {
   background-color: #fff;
   color: #000;
   padding: 2rem;
-  height: 50vh;
+  max-height: 100%;
   margin-bottom: .5rem;
 }
 
@@ -105,11 +105,14 @@ header {
   position: relative;
 }
 
+.white-section .div--expenses .singleton-expenses {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .white-section .div--expenses .div-expenses {
   display: flex;
   justify-content: space-evenly;
-  position: fixed;
-  bottom: 2rem;
 }
 
 .white-section .div--expenses .div-expenses input {
@@ -118,7 +121,8 @@ header {
 }
 
 .white-section .div--expenses .div-expenses input:focus {
-  border: none none 2px solid black none;
+  outline-color: #fff;
+  border-bottom: 2px solid #c4c4c4;
 }
 
 .div-budget {
@@ -129,5 +133,10 @@ header {
 .div-warning {
   background-color: #ff0000;
   color: #fff;
+}
+
+.span-across {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 /*# sourceMappingURL=styles.css.map */
