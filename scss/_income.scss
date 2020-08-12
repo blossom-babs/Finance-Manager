@@ -1,0 +1,40 @@
+
+@import './_variables';
+
+.div--income{
+
+    .singleton-expenses{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+     // display: flex;
+     // justify-content: space-between;
+          
+        i{
+            color: $blue;
+        }
+
+        i.red{
+            color: $red;
+        }
+     }
+
+    position: relative;
+
+    .div-budget{
+        position: absolute;
+        bottom: -3rem;
+
+        display: flex;
+        justify-content: space-evenly;
+
+        input{
+            width: 40%;
+            border: $white;
+
+            &:focus{
+                outline-color: $white;
+                border-bottom: 2px solid #c4c4c4;
+            }
+        }
+    }
+}
