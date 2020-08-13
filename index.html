@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/b527bec78a.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
+    
 </head>
 
 <body>
@@ -46,8 +47,7 @@
                     <span id="budget-output">0</span>
                 </div>
             </div>
-            <div id="circle-chart" class="circle-chart">
-            </div>
+            <div id="chartContainer"></div>
             <div class="expenses-output">
                 <div>
                     <h1>Expenses</h1>
@@ -117,7 +117,7 @@
                 <div class="div-budget">
                     <div>
                         <form id="budget-form" class="budget-form" action="">
-                            <input placeholder="Income title:" type="text" name="budget-name" id="budget-name">
+                            <input placeholder="Enter income:" type="text" name="budget-name" id="budget-name">
                             <input placeholder="Amount:" type="text" name="budget-input" id="budget-input"
                                  />
                             <button class="btn btn-sm btn-outline-primary" type="submit">
@@ -140,6 +140,8 @@
 
         </section>
     </div>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>

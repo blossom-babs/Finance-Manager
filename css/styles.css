@@ -206,4 +206,8 @@ header {
   outline-color: #fff;
   border-bottom: 2px solid #c4c4c4;
 }
+
+#chartContainer {
+  background-color: #0000ff;
+}
 /*# sourceMappingURL=styles.css.map */

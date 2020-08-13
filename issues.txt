@@ -1,1 +1,3 @@
-1. render colors of balance dynamically not working
+1. the chart
+2. the ui
+3. the all item
