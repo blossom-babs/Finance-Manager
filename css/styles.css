@@ -62,6 +62,10 @@ body {
   grid-template-rows: repeat(2, 1fr);
 }
 
+.all-design .topics {
+  display: block;
+}
+
 .all-design .all--income {
   display: flex;
   justify-content: space-between;
@@ -134,11 +138,11 @@ header {
 
 .finance-output h1 {
   font-size: 1rem;
-  color: #c4c4c4;
+  color: #fff;
 }
 
 .finance-output i {
-  color: #c4c4c4;
+  color: #fff;
 }
 
 .finance-output span {
@@ -201,10 +205,5 @@ header {
 .white-section .div--expenses .div-expenses input:focus {
   outline-color: #fff;
   border-bottom: 2px solid #c4c4c4;
-}
-
-.div-budget {
-  display: flex;
-  justify-content: center;
 }
 /*# sourceMappingURL=styles.css.map */

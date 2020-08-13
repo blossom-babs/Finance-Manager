@@ -16,6 +16,7 @@ class UI {
         this.incomeList = document.getElementById('income-list')
         this.allList = document.getElementById('all-list')
         this.balance = document.getElementById('balance-output')
+        this.circleChart = document.getElementById('circle-chart')
         this.itemList = []
         this.itemID = 0
         this.budgetList = []
@@ -24,12 +25,12 @@ class UI {
 
     // budget | take in income form method
     submitBudgetForm() {
-        // console.log(`your budget has been noted`);
+     
         if (this.budgetName.value === '' || this.budgetInput.value === "" || this.budgetInput.value <= 0) {
             this.budgetWarning.classList.remove("d-none");
             const self = this
             setTimeout(function () {
-                // console.log(self);
+              
                 self.budgetWarning.classList.add("d-none");
             }, 4000);
         } else {
@@ -66,11 +67,9 @@ class UI {
 
     // balance method
     ShowBalance() {
-        // console.log(`this is the balance`)
         const expense = this.totalExpense()
         const income = this.totalIncome()
         this.balance.innerHTML = income - expense
-
         const thisBalance = Number(this.balance.innerHTML)
 
         if (thisBalance === 0) {
@@ -96,7 +95,6 @@ class UI {
             }, 0)
         }
         this.budgetOutput.innerHTML = totalInc
-
         return totalInc
     }
 
@@ -116,7 +114,6 @@ class UI {
 
     // expense form method
     submitExpenseForm() {
-        // console.log(`now expense form is working too`)
         if (this.expenseName.value === '' || this.expenseAmt.value === '' || this.expenseAmt.value <= 0) {
             this.expenseWarning.classList.remove('d-none')
             const self = this
@@ -134,7 +131,7 @@ class UI {
                 amount
             }
             this.itemID++
-            console.log(expenseObj)
+           
             this.itemList.push(expenseObj)
             this.addExpense(expenseObj)
             this.ShowBalance()
@@ -142,13 +139,13 @@ class UI {
             this.expenseName.value = ''
             this.expenseAmt.value = ''
 
-            // console.log(expenseObj)
+            
         }
     }
 
     // add individual expense 
     addExpense(expenseObj) {
-        //  console.log(`add expense is working`)
+       
         const newDiv = document.createElement('div')
         newDiv.classList.add('singleton-expenses')
         newDiv.innerHTML = `
@@ -165,10 +162,10 @@ class UI {
     // edit expense
     editExpense(element) {
         const el = element.target.parentElement
-        console.log(el)
+     
         const parent = el.parentElement
         const id = Number(el.dataset.id)
-        console.log(el.dataset.id)
+       
         this.expenseList.removeChild(parent)
 
         let expense = this.itemList.filter((item) => {
@@ -181,7 +178,7 @@ class UI {
             return item.id !== id
         })
         this.itemList = tempList
-        console.log(this.itemList)
+       
         this.ShowBalance()
     }
 
@@ -201,7 +198,6 @@ class UI {
             return item.id !== editIncomeId
         })
         this.budgetList = tempIncome
-        console.log(this.budgetList)
         this.ShowBalance()
 
     }
@@ -211,13 +207,11 @@ class UI {
         const el = element.target.parentElement
         const parent = el.parentElement
         const id = Number(el.dataset.id)
-        // console.log(el.dataset.id)
         this.expenseList.removeChild(parent)
         let tempList = this.itemList.filter((item) => {
             return item.id !== id
         })
         this.itemList = tempList
-        console.log(this.itemList)
         this.ShowBalance()
     }
 
@@ -231,7 +225,6 @@ class UI {
             return item.id !== editIncomeId
         })
         this.budgetList = tempIncome
-        console.log(this.budgetList)
         this.ShowBalance()
     }
 
@@ -247,8 +240,6 @@ class UI {
             ...destructureExpense,
             ...destructureIncome
         }
-
-        console.log(allExpense)
         this.addAll(allExpense)
     }
 
@@ -258,7 +249,7 @@ class UI {
         const allDiv = document.createElement('div')
         allDiv.classList.add('all-design')
 
-        if ( `${allExpense.title}` === 'undefined' || `${allExpense.amount}` === 'undefined' ){
+        if (`${allExpense.title}` === 'undefined' || `${allExpense.amount}` === 'undefined') {
             allDiv.innerHTML = `
             <div class='all--income'>
             <h6 class="topics">Income</h6>
@@ -266,7 +257,7 @@ class UI {
             <h6>${allExpense.budgetName}</h6>
             </div>
             `
-        } else if ( `${allExpense.budgetAmount}` === 'undefined' || `${allExpense.budgetName}` === 'undefined' ){
+        } else if (`${allExpense.budgetAmount}` === 'undefined' || `${allExpense.budgetName}` === 'undefined') {
             allDiv.innerHTML = `
             <div class='all--expense'>
         <h6 class="topics">Expenses</h6>
@@ -275,7 +266,7 @@ class UI {
         </div>
             `
         } else
-        allDiv.innerHTML = `
+            allDiv.innerHTML = `
         <div class='all--expense'>
         <h6 class="topics">Expenses</h6>
         <h6>${allExpense.title}</h6>
@@ -291,6 +282,46 @@ class UI {
 
     }
 
+    // // display circle chart
+    // displayCircle(expense, income) {
+    //     console.log(`still working`)
+
+    //     // create canvas element
+    //     const canvas = document.createElement('canvas')
+    //     canvas.width = 50;
+    //     canvas.height = 50;
+
+    //     // appending the canvass to the chart
+    //     this.circleChart.appendChild(canvas)
+
+    //     //to draw on canvass, we need to get the context of the canvass
+    //     const ctx = canvas.getContext('2d')
+
+    //     // change the line width
+    //     ctx.lineWidth = 8
+
+    //     // circle radius
+    //     const R = 20
+
+    //     function drawCircle(color, ratio, anticlockwise) {
+    //         console.log(ctx)
+    //         ctx.strokeStyle = color
+    //         ctx.beginPath()
+    //         ctx.arc(canvas.width / 2, canvas.height / 2, R, 0, ratio * 2 * Math.PI, anticlockwise)
+    //         ctx.stroke()
+    //     }
+
+    //     //this.updateChart(this.expense, this.income)
+    //         let ratio = income / (income + expense)
+    //         drawCircle('red', -ratio, true)
+    //         drawCircle('white', 1 - ratio, false)
+    // }
+
+    // update chart: hopefully it works
+
+
+
+
 }
 
 function eventListeners() {
@@ -303,6 +334,7 @@ function eventListeners() {
     const displayIncome = document.getElementById('div--income')
     const income = document.getElementById('dashboard-income')
     const displayAll = document.getElementById('div--all')
+    const circleChart = document.getElementById('circle-chart')
     const all = document.getElementById('dashboard-all')
 
     // instantiating the ui class
@@ -347,7 +379,6 @@ function eventListeners() {
 
     //display income
     income.addEventListener('click', () => {
-        console.log(`income was clicked`)
         displayAll.classList.add('d-none')
         displayExpense.classList.add('d-none')
         displayIncome.classList.remove('d-none')
@@ -364,6 +395,12 @@ function eventListeners() {
 
 }
 
+//updateChart(1500, 500)
+
 document.addEventListener("DOMContentLoaded", function () {
     eventListeners();
+
+    // // circle chart
+    // const interface = new UI();
+    // interface.displayCircle()
 });
