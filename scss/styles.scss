@@ -24,14 +24,21 @@ body {
     font-family: $font;
 }
 
+hr{
+    background-color: $blue;
+    width: 10rem;
+}
+
 .blue-bg{
    background-color: $blue;
     color: $white;
     width: 100%;
+    //position: absolute;
+
 }
 
-.span {
-    color: $green;
+span {
+    color: $blue;
 }
 
 .all-design{

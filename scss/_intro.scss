@@ -1,14 +1,14 @@
 @import './_variables';
 
-.intro {
+#intro {
 
     @media (min-width:800px) {
         display: flex;
         align-items: center;
         justify-content: center;
- 
 
-}
+
+    }
 
     margin: 3rem 0;
 
@@ -17,6 +17,17 @@
         h2 {
             padding-bottom: 1rem;
 
+        }
+
+        input{
+            border: 1px solid #c4c4c4;
+            padding: .5rem;
+          
+            &:focus{
+                outline-color: $white;
+               // background-color: $red;
+               border-bottom: 5px solid #eeeeee;
+            }
         }
     }
 
@@ -27,3 +38,58 @@
 
 }
 
+// about 
+
+#about {
+    margin: 3rem 0;
+
+    p {
+        padding-top: 1rem;
+        line-height: 2rem;
+    }
+
+}
+
+// how it works
+
+#how {
+
+    h2{
+        margin: 2rem 0;
+    }
+    .grid {
+     
+        @media screen and (min-width:1000px){
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .card {
+            -webkit-box-shadow: 10px 9px 10px -9px rgba(196, 196, 196, 1);
+            -moz-box-shadow: 10px 9px 10px -9px rgba(196, 196, 196, 1);
+            box-shadow: 10px 9px 10px -9px rgba(196, 196, 196, 1);
+            border-color: $white;
+            margin-bottom: 1rem;
+            padding: 2rem;
+            // width: 70%;
+            text-align: left;
+        }
+
+        .card.one{
+
+            @media screen and (min-width:1000px){
+                margin-right: 2rem;
+            }
+          // background-color: $red;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+           // justify-content: space-around;
+
+           i{
+               color: $blue;
+               padding-top: .5rem;
+           }
+        }
+
+    }
+}

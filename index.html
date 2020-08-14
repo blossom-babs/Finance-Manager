@@ -23,7 +23,9 @@
 </head>
 
 <body>
-    <div class="container div-body">
+    <div class="container">
+
+        <!-- header section -->
         <header>
             <div>
                 <h1>Finance Budd<span>y.</span></h1>
@@ -31,133 +33,178 @@
             <div><button class="btn btn-md btn-outline-primary"><a href="#about"></a>About</button></div>
         </header>
 
+        <!-- intro section -->
         <section class="intro" id="intro">
             <div class="col-text">
                 <h2>Keep track of your finances and manage them better.</h2>
                 <p>Put Finance buddy in charge today. 😎</p>
-                <button class="btn btn-lg btn-primary"><a href="#getStarted"></a>Get Started</button>
+                <form>
+                <input type="text" placeholder="Enter Your Name: ">
+                <button type="submit" class="btn btn-lg btn-primary"><a href="#getStarted"></a>Get Started</button>
+            </form>
             </div>
             <div class="col-img">
                 <img class="image" src="images/card-stack.svg" alt="">
             </div>
+        </section>
 
-    </div>
-    </section>
+        <hr>
+        <!-- about section -->
+        <section id="about" class="about">
+            <h2>About <span>Us.</span></h2>
+            <p>Finance Buddy is committed to helping users manage their finances.
+                This app helps users manage their income and keep track of their expenses. Users can input their
+                income and expenses manually and it will track and record all transactions automatically. Our
+                platform is stable, secure, and totally private. Our dedicated customer service team is friendly,
+                knowledgeable, and quick to respond.</p>
+        </section>
 
-    <div class="blue-bg">
-        <section class="balance-output">
-            <div>
-                <h1>Balance</h1>
-            </div>
-            <div class="bal-output">
-                <i class="fas fa-money-check"></i><span id="balance-output">0</span>
+        <hr>
+
+        <section id="how" class="how">
+            <h2>How it works</h2>
+            <div class="grid">
+                <div class="card one two">
+                    <div><i class="fas fa-3x fa-money-check"></i></div>
+                    <div>
+                        <h3>Add Income</h3>
+                        <p>Add income(s), keep track of your income and get to know how to spend wisely. </p>
+                    </div>
+                </div>
+                <div class="card one two">
+                   
+                    <div><i class="fas fa-3x fa-money-check"></i></div>
+                    <div>
+                        <h3>Add Expense</h3>
+                        <p>Add expense(s), manage expenses and
+                            track your spendings.</p>
+                    </div>
+
+                </div>
+                <div class="card one">
+                    <div><i class="fas fa-3x fa-edit"></i></div>
+                    <div><h3>😊</h3>
+                        <p>Save, Edit, Delete it. Let your personal finance Manager manage everything for you.</p>
+                    </div></div>
             </div>
         </section>
 
-        <section class="finance-output">
-            <div class="budget-output">
+        <div class="blue-bg">
+            <section class="balance-output">
                 <div>
-                    <h1>Income</h1>
+                    <h1>Balance</h1>
                 </div>
-                <div class="budget-outp">
-                    <i class="fas fa-money-check"></i>
-                    <span id="budget-output">0</span>
+                <div class="bal-output">
+                    <i class="fas fa-money-check"></i><span id="balance-output">0</span>
                 </div>
-            </div>
-            <div id="chartContainer"></div>
-            <div class="expenses-output">
-                <div>
-                    <h1>Expenses</h1>
-                </div>
-                <div class="expense-outp">
-                    <i class="fas fa-money-check"></i>
-                    <span id="expenses-output">0</span>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="white-section">
 
-            <div class="dashboard">
-                <div>
-                    <h1 id="dashboard-expenses">Expenses</h1>
+            <section class="finance-output">
+                <div class="budget-output">
+                    <div>
+                        <h1>Income</h1>
+                    </div>
+                    <div class="budget-outp">
+                        <i class="fas fa-money-check"></i>
+                        <span id="budget-output">0</span>
+                    </div>
                 </div>
-                <div>
-                    <h1 id="dashboard-income">Income</h1>
+                <div id="chartContainer"></div>
+                <div class="expenses-output">
+                    <div>
+                        <h1>Expenses</h1>
+                    </div>
+                    <div class="expense-outp">
+                        <i class="fas fa-money-check"></i>
+                        <span id="expenses-output">0</span>
+                    </div>
                 </div>
-                <div>
-                    <h1 id="dashboard-all">All</h1>
-                </div>
-            </div>
+            </section>
 
-            <hr>
+            <section class="white-section">
 
-            <div id='div--expenses' class="d-none div--expenses">
-                <div id="expense-list">
-                    <div id="single-expense" class='singleton-expenses'>
-                        <!-- <h6>sth</h6>
+                <div class="dashboard">
+                    <div>
+                        <h1 id="dashboard-expenses">Expenses</h1>
+                    </div>
+                    <div>
+                        <h1 id="dashboard-income">Income</h1>
+                    </div>
+                    <div>
+                        <h1 id="dashboard-all">All</h1>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div id='div--expenses' class="d-none div--expenses">
+                    <div id="expense-list">
+                        <div id="single-expense" class='singleton-expenses'>
+                            <!-- <h6>sth</h6>
                     <h6>sth</h6>
                     <p>sth</p>
                     <a>sth</a> -->
+                        </div>
+                    </div>
+
+                    <div id="expense-warning" class="d-none div-warning">
+                        <p>Values cannot be empty or negative</p>
+                    </div>
+                    <div class="div-expenses">
+                        <div>
+                            <form id="expense-form" class="expense-form" action="">
+                                <input placeholder="Enter item:" type="text" name="expense-name" id="expense-name" />
+                                <input placeholder="Amount:" type="text" name="expense-amount" id="expense-amount" />
+                                <button class="btn btn-sm btn-outline-primary" type="submit"><i
+                                        class='fas fa-plus'></i></button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
-                <div id="expense-warning" class="d-none div-warning">
-                    <p>Values cannot be empty or negative</p>
-                </div>
-                <div class="div-expenses">
-                    <div>
-                        <form id="expense-form" class="expense-form" action="">
-                            <input placeholder="Enter item:" type="text" name="expense-name" id="expense-name" />
-                            <input placeholder="Amount:" type="text" name="expense-amount" id="expense-amount" />
-                            <button class="btn btn-sm btn-outline-primary" type="submit"><i
-                                    class='fas fa-plus'></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div id="div--income" class="div--income">
-                <div id="income-list">
-                    <div id="single-income" class='singleton-expenses'>
-                        <!-- <h2>sth</h2>
+                <div id="div--income" class="div--income">
+                    <div id="income-list">
+                        <div id="single-income" class='singleton-expenses'>
+                            <!-- <h2>sth</h2>
                     <h2>sth</h2>
                     <p>sth</p>
                     <a>sth</a> -->
+                        </div>
+                    </div>
+
+                    <div id="budget-warning" class="d-none div-warning">
+                        <p>Values cannot be empty or contain negative values</p>
+                    </div>
+
+                    <div class="div-budget">
+                        <div>
+                            <form id="budget-form" class="budget-form" action="">
+                                <input placeholder="Enter income:" type="text" name="budget-name" id="budget-name">
+                                <input placeholder="Amount:" type="text" name="budget-input" id="budget-input" />
+                                <button class="btn btn-sm btn-outline-primary" type="submit">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="div--all" class="d-none div--all">
+                    <div id="all-list" class="all-list">
+                        <div class="all-design">
+
+                        </div>
                     </div>
                 </div>
 
-                <div id="budget-warning" class="d-none div-warning">
-                    <p>Values cannot be empty or contain negative values</p>
-                </div>
+            </section>
+        </div>
 
-                <div class="div-budget">
-                    <div>
-                        <form id="budget-form" class="budget-form" action="">
-                            <input placeholder="Enter income:" type="text" name="budget-name" id="budget-name">
-                            <input placeholder="Amount:" type="text" name="budget-input" id="budget-input" />
-                            <button class="btn btn-sm btn-outline-primary" type="submit">
-                                <i class="fas fa-plus"></i>
-                            </button>
 
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="div--all" class="d-none div--all">
-                <div id="all-list" class="all-list">
-                    <div class="all-design">
-
-                    </div>
-                </div>
-            </div>
-
-        </section>
     </div>
-    </div>
-
 </body>
 
 </html>

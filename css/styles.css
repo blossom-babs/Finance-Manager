@@ -7,7 +7,7 @@
   grid-template-columns: repeat(4, 1fr);
 }
 .div--income .singleton-expenses i {
-  color: #0000ff;
+  color: #007bff;
 }
 .div--income .singleton-expenses i.red {
   color: #ff0000;
@@ -33,28 +33,76 @@ header {
   margin: 2rem 0;
 }
 header span {
-  color: #0000ff;
+  color: #007bff;
 }
 header h1 {
   margin: 0;
   padding: 0;
 }
 
-.intro {
+#intro {
   margin: 3rem 0;
 }
 @media (min-width: 800px) {
-  .intro {
+  #intro {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
-.intro .col-text h2 {
+#intro .col-text h2 {
   padding-bottom: 1rem;
 }
-.intro .image {
+#intro .col-text input {
+  border: 1px solid #c4c4c4;
+  padding: 0.5rem;
+}
+#intro .col-text input:focus {
+  outline-color: #fff;
+  border-bottom: 5px solid #eeeeee;
+}
+#intro .image {
   width: 100%;
+}
+
+#about {
+  margin: 3rem 0;
+}
+#about p {
+  padding-top: 1rem;
+  line-height: 2rem;
+}
+
+#how h2 {
+  margin: 2rem 0;
+}
+@media screen and (min-width: 1000px) {
+  #how .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+#how .grid .card {
+  -webkit-box-shadow: 10px 9px 10px -9px #c4c4c4;
+  -moz-box-shadow: 10px 9px 10px -9px #c4c4c4;
+  box-shadow: 10px 9px 10px -9px #c4c4c4;
+  border-color: #fff;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  text-align: left;
+}
+#how .grid .card.one {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (min-width: 1000px) {
+  #how .grid .card.one {
+    margin-right: 2rem;
+  }
+}
+#how .grid .card.one i {
+  color: #007bff;
+  padding-top: 0.5rem;
 }
 
 * {
@@ -75,14 +123,19 @@ body {
   font-family: "Baloo Tamma 2", cursive;
 }
 
+hr {
+  background-color: #007bff;
+  width: 10rem;
+}
+
 .blue-bg {
-  background-color: #0000ff;
+  background-color: #007bff;
   color: #fff;
   width: 100%;
 }
 
-.span {
-  color: #99FF00;
+span {
+  color: #007bff;
 }
 
 .all-design {
@@ -177,7 +230,7 @@ body {
 }
 .white-section .dashboard h1:hover {
   text-decoration: underline;
-  text-decoration-color: #0000ff;
+  text-decoration-color: #007bff;
   cursor: pointer;
 }
 .white-section .div--expenses {
@@ -188,7 +241,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 .white-section .div--expenses .singleton-expenses i {
-  color: #0000ff;
+  color: #007bff;
 }
 .white-section .div--expenses .singleton-expenses i.delete-exp {
   color: #ff0000;
@@ -209,7 +262,7 @@ body {
 }
 
 #chartContainer {
-  background-color: #0000ff;
+  background-color: #007bff;
 }
 
 /*# sourceMappingURL=styles.css.map */
