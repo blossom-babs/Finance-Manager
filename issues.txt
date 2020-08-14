@@ -1,3 +1,7 @@
 1. the chart
 2. the ui
 3. the all item
+$. webpack
+
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

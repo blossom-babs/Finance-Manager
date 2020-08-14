@@ -1,0 +1,19 @@
+{
+  "name": "pfn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blossom-babs/Finance-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blossom-babs/Finance-Manager/issues"
+  },
+  "homepage": "https://github.com/blossom-babs/Finance-Manager#readme"
+}

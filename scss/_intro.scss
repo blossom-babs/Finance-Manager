@@ -1,0 +1,29 @@
+@import './_variables';
+
+.intro {
+
+    @media (min-width:800px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+ 
+
+}
+
+    margin: 3rem 0;
+
+    .col-text {
+
+        h2 {
+            padding-bottom: 1rem;
+
+        }
+    }
+
+
+    .image {
+        width: 100%;
+    }
+
+}
+

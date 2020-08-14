@@ -19,15 +19,32 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/b527bec78a.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
-    
+
 </head>
 
 <body>
     <div class="container div-body">
         <header>
-            <h1>My Finance Budd<span class="span">y.</span></h1>
+            <div>
+                <h1>Finance Budd<span>y.</span></h1>
+            </div>
+            <div><button class="btn btn-md btn-outline-primary"><a href="#about"></a>About</button></div>
         </header>
 
+        <section class="intro" id="intro">
+            <div class="col-text">
+                <h2>Keep track of your finances and manage them better.</h2>
+                <p>Put Finance buddy in charge today. 😎</p>
+                <button class="btn btn-lg btn-primary"><a href="#getStarted"></a>Get Started</button>
+            </div>
+            <div class="col-img">
+                <img class="image" src="images/card-stack.svg" alt="">
+            </div>
+
+    </div>
+    </section>
+
+    <div class="blue-bg">
         <section class="balance-output">
             <div>
                 <h1>Balance</h1>
@@ -118,8 +135,7 @@
                     <div>
                         <form id="budget-form" class="budget-form" action="">
                             <input placeholder="Enter income:" type="text" name="budget-name" id="budget-name">
-                            <input placeholder="Amount:" type="text" name="budget-input" id="budget-input"
-                                 />
+                            <input placeholder="Amount:" type="text" name="budget-input" id="budget-input" />
                             <button class="btn btn-sm btn-outline-primary" type="submit">
                                 <i class="fas fa-plus"></i>
                             </button>
@@ -132,16 +148,16 @@
 
             <div id="div--all" class="d-none div--all">
                 <div id="all-list" class="all-list">
-<div class="all-design">
+                    <div class="all-design">
 
-</div>
+                    </div>
                 </div>
             </div>
 
         </section>
     </div>
+    </div>
 
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>

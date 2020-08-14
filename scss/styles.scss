@@ -1,25 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
 @import 'income';
+@import 'header';
+@import 'intro';
 @import './_variables';
 
-// $font: 'Baloo Tamma 2',
-// cursive;
-// $blue: #0000ff;
-// $white: #fff;
-// $black: #000;
-// $red: #ff0000;
-// $green: #99FF00;
 
 * {
     margin: 0;
     padding: 0;
-    // overflow-x: hidden;
 }
 
 html,
 body {
     overflow-x: hidden;
-    box-sizing: border-box;
+   box-sizing: border-box;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -27,9 +21,13 @@ body {
 
 
 body {
-    background-color: $blue;
-    color: $white;
     font-family: $font;
+}
+
+.blue-bg{
+   background-color: $blue;
+    color: $white;
+    width: 100%;
 }
 
 .span {
@@ -56,14 +54,7 @@ body {
   }
 }
 
-// header
 
-header {
-    display: flex;
-    justify-content: center;
-    // height: 50vh;
-    margin: 5rem 0;
-}
 
 // warning div
 

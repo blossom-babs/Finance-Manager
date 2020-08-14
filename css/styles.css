@@ -2,35 +2,59 @@
 .div--income {
   position: relative;
 }
-
 .div--income .singleton-expenses {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-
 .div--income .singleton-expenses i {
   color: #0000ff;
 }
-
 .div--income .singleton-expenses i.red {
   color: #ff0000;
 }
-
 .div--income .div-budget {
   position: absolute;
   bottom: -3rem;
   display: flex;
   justify-content: space-evenly;
 }
-
 .div--income .div-budget input {
   width: 40%;
   border: #fff;
 }
-
 .div--income .div-budget input:focus {
   outline-color: #fff;
   border-bottom: 2px solid #c4c4c4;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+header span {
+  color: #0000ff;
+}
+header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.intro {
+  margin: 3rem 0;
+}
+@media (min-width: 800px) {
+  .intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.intro .col-text h2 {
+  padding-bottom: 1rem;
+}
+.intro .image {
+  width: 100%;
 }
 
 * {
@@ -48,9 +72,13 @@ body {
 }
 
 body {
+  font-family: "Baloo Tamma 2", cursive;
+}
+
+.blue-bg {
   background-color: #0000ff;
   color: #fff;
-  font-family: "Baloo Tamma 2", cursive;
+  width: 100%;
 }
 
 .span {
@@ -61,27 +89,18 @@ body {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
 }
-
 .all-design .topics {
   display: block;
 }
-
 .all-design .all--income {
   display: flex;
   justify-content: space-between;
   color: #99FF00;
 }
-
 .all-design .all--expense {
   display: flex;
   justify-content: space-between;
   color: #ff0000;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  margin: 5rem 0;
 }
 
 .div-warning {
@@ -104,28 +123,23 @@ header {
   position: relative;
   margin-bottom: 5rem;
 }
-
 .balance-output .bal-output {
   position: absolute;
   left: 3rem;
 }
-
 .balance-output .white {
   color: #fff;
 }
-
 .balance-output .red {
   color: #ff0000;
 }
-
 .balance-output .green {
   color: #99FF00;
 }
-
 .balance-output span {
   padding-left: 1rem;
   font-weight: bold;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -135,16 +149,13 @@ header {
   margin: 7rem 0 4rem 0;
   margin-left: 3rem;
 }
-
 .finance-output h1 {
   font-size: 1rem;
   color: #fff;
 }
-
 .finance-output i {
   color: #fff;
 }
-
 .finance-output span {
   padding-left: 1rem;
 }
@@ -155,53 +166,43 @@ header {
   padding: 2rem;
   padding-bottom: 5rem;
   max-height: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-
 .white-section .dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
 .white-section .dashboard h1 {
   font-size: 1.3rem;
 }
-
 .white-section .dashboard h1:hover {
   text-decoration: underline;
   text-decoration-color: #0000ff;
   cursor: pointer;
 }
-
 .white-section .div--expenses {
   position: relative;
 }
-
 .white-section .div--expenses .singleton-expenses {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-
 .white-section .div--expenses .singleton-expenses i {
   color: #0000ff;
 }
-
 .white-section .div--expenses .singleton-expenses i.delete-exp {
   color: #ff0000;
 }
-
 .white-section .div--expenses .div-expenses {
   display: flex;
   justify-content: space-evenly;
   position: absolute;
   bottom: -3rem;
 }
-
 .white-section .div--expenses .div-expenses input {
   width: 40%;
   border: #fff;
 }
-
 .white-section .div--expenses .div-expenses input:focus {
   outline-color: #fff;
   border-bottom: 2px solid #c4c4c4;
@@ -210,4 +211,5 @@ header {
 #chartContainer {
   background-color: #0000ff;
 }
+
 /*# sourceMappingURL=styles.css.map */
