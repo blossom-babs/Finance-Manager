@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
-@import 'income';
-@import 'header';
+@import 'blue';
 @import 'intro';
 @import './_variables';
 
@@ -12,7 +11,7 @@
 
 html,
 body {
-    overflow-x: hidden;
+    //overflow-x: hidden;
    box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -33,7 +32,8 @@ hr{
    background-color: $blue;
     color: $white;
     width: 100%;
-    //position: absolute;
+    position: absolute;
+    left: 0;
 
 }
 
@@ -41,178 +41,9 @@ span {
     color: $blue;
 }
 
-.all-design{
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-
-    .topics{
-        display: block;
-    }
-
-  .all--income{
-      display: flex;
-      justify-content: space-between;
-      color: $green;
-  }
-  .all--expense{
-    display: flex;
-    justify-content: space-between;
-    color: $red;
-  }
-}
 
 
 
-// warning div
-
-.div-warning {
-    background-color: $red;
-    color:$white;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-}
-
-// budget output (income)
-#budget-output{
-    color: $green;
-}
-
-// expenses output
-#expenses-output{
-    color: $red;
-}
-
-// balance output
-
-.balance-output {
-    position: relative;
-    margin-bottom: 5rem;
-
-    .bal-output {
-        position: absolute;
-        left: 3rem;
-
-    }
-
-    .white {
-        color: $white;
-    }
-
-    .red {
-        color: $red;
-    }
-
-    .green {
-        color: $green;
-    }
-
-    span {
-        padding-left: 1rem;
-        font-weight: bold;
-        letter-spacing: .5rem;
-        font-size: 1.5rem;
-    }
-}
-
-// finance output
-.finance-output {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 7rem 0 4rem 0;
-    margin-left: 3rem;
-
-    h1 {
-        font-size: 1rem;
-        color: $white;
-    }
-
-    i{
-        color: $white;
-    }
-
-    span{
-        padding-left: 1rem;
-    }
-}
-
-// white-section
-
-.white-section{
-    background-color: $white;
-    color: $black;
-    padding: 2rem;
-    padding-bottom: 5rem;
-    max-height: 100%;
-    margin-bottom: .5rem;
-
-    .dashboard{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-
-        h1{
-            font-size: 1.3rem;
-
-            &:hover{
-                text-decoration: underline;
-                text-decoration-color: $blue;
-                cursor: pointer;
-            }
-        }
-    }
-
-    // expenses
-
-    .div--expenses{
-        position: relative;
-
-        .singleton-expenses{
-           display: grid;
-           grid-template-columns: repeat(4, 1fr);
-        // display: flex;
-        // justify-content: space-between;
-             
-           i{
-               color: $blue;
-           }
-
-           i.delete-exp{
-               color: $red;
-           }
-        }
-
-        .div-expenses{
-        //  display: grid;
-        //  grid-template-columns: 1fr 1fr 1fr;
-        display: flex;
-        justify-content: space-evenly;
-        position: absolute;
-        bottom: -3rem;
-        //top: 1rem;
-
-         input{
-             width: 40%;
-             border: $white;
-
-             &:focus{
-                 outline-color: $white;
-                 border-bottom: 2px solid #c4c4c4;
-             }
-         }
-        }
-    }
-}
-
-// budget form
-
-// .div-budget {
-//     display: flex;
-//     justify-content: center;
-// }
 
 
 
-// the circle chart
-#chartContainer{
-    background-color: $blue;
-}

@@ -1,6 +1,8 @@
 1. the chart
 2. the ui
-3. the all item
+3. the all item - removing all
+4. adding the name function
+5. implementing long pulling
 $. webpack
 
 

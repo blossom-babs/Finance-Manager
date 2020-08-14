@@ -1,5 +1,23 @@
 @import './_variables';
 
+header{
+    span{
+        color:$blue;
+    }
+        h1{
+            margin: 0;
+            padding: 0;
+          
+        }
+     
+        display: flex;
+        justify-content: space-between;
+    
+        margin: 2rem 0;
+    
+        
+    }
+
 #intro {
 
     @media (min-width:800px) {

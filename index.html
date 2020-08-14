@@ -38,10 +38,10 @@
             <div class="col-text">
                 <h2>Keep track of your finances and manage them better.</h2>
                 <p>Put Finance buddy in charge today. 😎</p>
-                <form>
-                <input type="text" placeholder="Enter Your Name: ">
-                <button type="submit" class="btn btn-lg btn-primary"><a href="#getStarted"></a>Get Started</button>
-            </form>
+                <form id="getUserName">
+                    <input id="getuserValue" type="text" placeholder="Enter Your Name: ">
+                    <button type="button" class="btn btn-lg btn-primary"><a href="#getStarted"></a>Get Started</button>
+                </form>
             </div>
             <div class="col-img">
                 <img class="image" src="images/card-stack.svg" alt="">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="card one two">
-                   
+
                     <div><i class="fas fa-3x fa-money-check"></i></div>
                     <div>
                         <h3>Add Expense</h3>
@@ -83,13 +83,19 @@
                 </div>
                 <div class="card one">
                     <div><i class="fas fa-3x fa-edit"></i></div>
-                    <div><h3>😊</h3>
+                    <div>
+                        <h3>😊</h3>
                         <p>Save, Edit, Delete it. Let your personal finance Manager manage everything for you.</p>
-                    </div></div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="blue-bg">
+        <div id="getStarted" class="blue-bg all-design">
+            <div class="welcome">
+                <h2>Welcome, <span id="userName"></span></h2>
+                <p>Get Started with your Finance Buddy.</p>
+            </div>
             <section class="balance-output">
                 <div>
                     <h1>Balance</h1>
@@ -98,7 +104,6 @@
                     <i class="fas fa-money-check"></i><span id="balance-output">0</span>
                 </div>
             </section>
-
 
             <section class="finance-output">
                 <div class="budget-output">
@@ -121,6 +126,8 @@
                     </div>
                 </div>
             </section>
+
+
 
             <section class="white-section">
 
@@ -201,7 +208,8 @@
                 </div>
 
             </section>
-        </div>
+
+        </div> <!-- the end of the blue section -->
 
 
     </div>
