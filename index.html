@@ -16,6 +16,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
+
+    <!-- Animate on page load css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/b527bec78a.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
@@ -30,20 +34,21 @@
             <div>
                 <h1>Finance Budd<span>y.</span></h1>
             </div>
-            <div><button class="btn btn-md btn-outline-primary"><a href="#about"></a>About</button></div>
+            <div><a href="#about"><button class="btn btn-md btn-outline-primary">About</button></a></div>
         </header>
 
         <!-- intro section -->
         <section class="intro" id="intro">
-            <div class="col-text">
+            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"" class=" col-text">
                 <h2>Keep track of your finances and manage them better.</h2>
                 <p>Put Finance buddy in charge today. 😎</p>
                 <form id="getUserName">
-                    <input id="getuserValue" type="text" placeholder="Enter Your Name: ">
-                    <button type="button" class="btn btn-lg btn-primary"><a href="#getStarted"></a>Get Started</button>
+                    <input id="getUserValue" type="text" placeholder="Enter Your Name: ">
+                    <a href="#getStarted"><button type="submit" class="btn btn-lg btn-primary">Get
+                            Started</button></a>
                 </form>
             </div>
-            <div class="col-img">
+            <div data-aos="fade-left" data-aos-offset="200" data-aos-duration="2500" class="col-img">
                 <img class="image" src="images/card-stack.svg" alt="">
             </div>
         </section>
@@ -64,14 +69,16 @@
         <section id="how" class="how">
             <h2>How it works</h2>
             <div class="grid">
-                <div class="card one two">
+                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
+                    class="card one two">
                     <div><i class="fas fa-3x fa-money-check"></i></div>
                     <div>
                         <h3>Add Income</h3>
                         <p>Add income(s), keep track of your income and get to know how to spend wisely. </p>
                     </div>
                 </div>
-                <div class="card one two">
+                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
+                    class="card one two">
 
                     <div><i class="fas fa-3x fa-money-check"></i></div>
                     <div>
@@ -81,7 +88,7 @@
                     </div>
 
                 </div>
-                <div class="card one">
+                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="card one">
                     <div><i class="fas fa-3x fa-edit"></i></div>
                     <div>
                         <h3>😊</h3>
@@ -91,101 +98,36 @@
             </div>
         </section>
 
-        <div id="getStarted" class="blue-bg all-design">
-            <div class="welcome">
-                <h2>Welcome, <span id="userName"></span></h2>
-                <p>Get Started with your Finance Buddy.</p>
-            </div>
-            <section class="balance-output">
-                <div>
-                    <h1>Balance</h1>
-                </div>
-                <div class="bal-output">
-                    <i class="fas fa-money-check"></i><span id="balance-output">0</span>
-                </div>
-            </section>
-
-            <section class="finance-output">
-                <div class="budget-output">
-                    <div>
-                        <h1>Income</h1>
-                    </div>
-                    <div class="budget-outp">
-                        <i class="fas fa-money-check"></i>
-                        <span id="budget-output">0</span>
-                    </div>
-                </div>
-                <div id="chartContainer"></div>
-                <div class="expenses-output">
-                    <div>
-                        <h1>Expenses</h1>
-                    </div>
-                    <div class="expense-outp">
-                        <i class="fas fa-money-check"></i>
-                        <span id="expenses-output">0</span>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="white-section">
-
-                <div class="dashboard">
-                    <div>
-                        <h1 id="dashboard-expenses">Expenses</h1>
-                    </div>
-                    <div>
-                        <h1 id="dashboard-income">Income</h1>
-                    </div>
-                    <div>
-                        <h1 id="dashboard-all">All</h1>
-                    </div>
+        <!-- calculation section -->
+        <div id="getStarted" class="blue-bg">
+            <div class="container wrapper">
+                <div data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="2500" class="welcome">
+                    <h2>Welcome, <span id="userName"></span></h2>
+                    <p>Get Started with your Finance Buddy.</p>
                 </div>
 
                 <hr>
 
-                <div id='div--expenses' class="d-none div--expenses">
-                    <div id="expense-list">
-                        <div id="single-expense" class='singleton-expenses'>
-                            <!-- <h6>sth</h6>
-                    <h6>sth</h6>
-                    <p>sth</p>
-                    <a>sth</a> -->
-                        </div>
+                <div class="blue-section-grid">
+                    <div>
+                        <h2>Balance: <span id="balance-output">0</span></h2>
                     </div>
-
-                    <div id="expense-warning" class="d-none div-warning">
-                        <p>Values cannot be empty or negative</p>
+                    <div class="income">
+                        <h2>Income: <span id="budget-output">0</span></h2>
                     </div>
-                    <div class="div-expenses">
-                        <div>
-                            <form id="expense-form" class="expense-form" action="">
-                                <input placeholder="Enter item:" type="text" name="expense-name" id="expense-name" />
-                                <input placeholder="Amount:" type="text" name="expense-amount" id="expense-amount" />
-                                <button class="btn btn-sm btn-outline-primary" type="submit"><i
-                                        class='fas fa-plus'></i></button>
-                            </form>
-                        </div>
+                    <div class="expense">
+                        <h2>Expense: <span id="expenses-output">0</span></h2>
                     </div>
                 </div>
 
-                <div id="div--income" class="div--income">
-                    <div id="income-list">
-                        <div id="single-income" class='singleton-expenses'>
-                            <!-- <h2>sth</h2>
-                    <h2>sth</h2>
-                    <p>sth</p>
-                    <a>sth</a> -->
+                <div class="cover">
+                    <div class="card-grids">
+                        <h6>Manage Your Income<span>.</span></h6>
+                        <div id="budget-warning" class="d-none div-warning">
+                            <p>Values cannot be empty or contain negative values</p>
                         </div>
-                    </div>
-
-                    <div id="budget-warning" class="d-none div-warning">
-                        <p>Values cannot be empty or contain negative values</p>
-                    </div>
-
-                    <div class="div-budget">
-                        <div>
+                        <div class="div-budget input-styling">
+                            
                             <form id="budget-form" class="budget-form" action="">
                                 <input placeholder="Enter income:" type="text" name="budget-name" id="budget-name">
                                 <input placeholder="Amount:" type="text" name="budget-input" id="budget-input" />
@@ -195,24 +137,65 @@
 
                             </form>
                         </div>
+
                     </div>
 
-                </div>
-
-                <div id="div--all" class="d-none div--all">
-                    <div id="all-list" class="all-list">
-                        <div class="all-design">
-
+                    <div class="card-grids">
+                         <h6>Track Your Expenses<span>.</span></h6>
+                        <div id="expense-warning" class="d-none div-warning">
+                            <p>Values cannot be empty or negative</p>
+                        </div>
+                        <div class="div-expenses input-styling">
+                            <div>
+                                <form id="expense-form" class="expense-form" action="">
+                                    <input placeholder="Enter item:" type="text" name="expense-name"
+                                        id="expense-name" />
+                                    <input placeholder="Amount:" type="text" name="expense-amount"
+                                        id="expense-amount" />
+                                    <button class="btn btn-sm btn-outline-primary" type="submit"><i
+                                            class='fas fa-plus'></i></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-            </section>
+                <div class="cover">
 
+                    <div class="card-grids">
+                        <h6>Your income List goes here</h6>
+                        <div id="div--income" class="div--income">
+                            <div id="income-list">
+                                <div id="single-income" class='singleton-expenses'>
+                                <h6>Income</h6>
+                                <h6>Amount</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-grids">
+                        <h6>Your Expense List goes here</h6>
+                        <div id="expense-list">
+                            <div id="single-expense" class='singleton-expenses'>
+                                  <h6>Item</h6>
+                                  <h6>Amount</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!--end of the wrapper section-->
         </div> <!-- the end of the blue section -->
 
 
     </div>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+     AOS.init();
+ </script>
 </body>
 
 </html>

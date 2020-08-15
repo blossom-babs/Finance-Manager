@@ -1,195 +1,163 @@
-
 @import './_variables';
+
+//card-grids
+
+.card-grids {
+
+    h6 {
+        padding-bottom: 1rem;
+        color: $black;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    -webkit-box-shadow: 10px 9px 10px -9px rgba(196, 196, 196, 1);
+    -moz-box-shadow: 10px 9px 10px -9px rgba(196, 196, 196, 1);
+    box-shadow: 10px 9px 10px -9px rgba(196, 196, 196, 1);
+    background-color: $white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    &.blue {
+        -webkit-box-shadow: 10px 10px 5px -7px rgba(0, 123, 255, 1);
+        -moz-box-shadow: 10px 10px 5px -7px rgba(0, 123, 255, 1);
+        box-shadow: 10px 10px 5px -7px rgba(0, 123, 255, 1);
+        background-color: $blue;
+
+    }
+}
+
+
+//singleton
+
+.singleton-expenses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .fa-edit {
+        color: $blue;
+    }
+
+    .fa-trash {
+        color: $red;
+    }
+}
+
+// wrapper
+
+.wrapper {
+
+    // the outputs
+    span {
+        color: $white;
+    }
+
+    .welcome {
+        p {
+            padding-bottom: 1rem;
+        }
+    }
+
+    margin: 2rem 0;
+
+    hr {
+        background-color: $white;
+    }
+}
+
+// blue section grid
+
+.blue-section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // display: flex;
+    // justify-content: space-around;
+    margin: 2rem 0;
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .income,
+    #budget-output {
+        color: $green;
+    }
+
+    .expense,
+    #expenses-output {
+        color: $red;
+    }
+}
 
 // warning div
 
 .div-warning {
     background-color: $red;
-    color:$white;
+    color: $white;
     width: 100%;
     padding: 1rem;
     text-align: center;
 }
 
-// budget output (income)
-#budget-output{
-    color: $green;
+// div-budget
+
+.input-styling {
+    display: flex;
+    //flex-direction: column;
+    //border: 2px solid red;
+    //grid-template-columns: repeat(3, 1fr);
+
+    input {
+        // border: 2px solid red;
+        width: 40%;
+        outline-color: $white;
+        border: 1px sold #c4c4c4;
+        padding-left: .5rem;
+
+        &:focus {
+            outline-color: $white;
+            background-color: $white;
+        }
+    }
 }
 
-// expenses output
-#expenses-output{
-    color: $red;
-}
+@media screen and (min-width:1000px) {
 
-// income
+    .wrapper {
+        margin-left: 7rem;
+    }
 
-.div--income{
-
-    .singleton-expenses{
+    .cover {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-     // display: flex;
-     // justify-content: space-between;
-          
-        i{
-            color: $blue;
+        grid-template-columns: repeat(2, 1fr);
+
+        .card-grids {
+            margin-right: 2rem;
         }
 
-        i.red{
-            color: $red;
-        }
-     }
-
-    position: relative;
-
-    .div-budget{
-        position: absolute;
-        bottom: -3rem;
-
-        display: flex;
-        justify-content: space-evenly;
-
-        input{
-            width: 40%;
-            border: $white;
-
-            &:focus{
-                outline-color: $white;
-                border-bottom: 2px solid #c4c4c4;
-            }
-        }
-    }
-}
-// balance output
-
-.balance-output {
-    position: relative;
-    margin-bottom: 5rem;
-
-    .bal-output {
-        position: absolute;
-        left: 3rem;
-
     }
 
-    .white {
-        color: $white;
-    }
 
-    .red {
-        color: $red;
-    }
-
-    .green {
-        color: $green;
-    }
-
-    span {
-        padding-left: 1rem;
-        font-weight: bold;
-        letter-spacing: .5rem;
-        font-size: 1.5rem;
-    }
 }
 
-// finance output
-.finance-output {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 7rem 0 4rem 0;
-    margin-left: 3rem;
 
-    h1 {
-        font-size: 1rem;
-        color: $white;
+@media screen and (min-width:700px) {
+
+    .wrapper {
+        margin-left: 7rem;
     }
 
-    i{
-        color: $white;
-    }
+    // .cover {
+    //     display: grid;
+    //     grid-template-columns: repeat(2, 1fr);
 
-    span{
-        padding-left: 1rem;
-    }
-}
+    //     .card-grids {
+    //         margin-right: 2rem;
+    //     }
 
-// white-section
-
-.white-section{
-    background-color: $white;
-    color: $black;
-    padding: 2rem;
-    padding-bottom: 5rem;
-    max-height: 100%;
-    margin-bottom: .5rem;
-
-    .dashboard{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-
-        h1{
-            font-size: 1.3rem;
-
-            &:hover{
-                text-decoration: underline;
-                text-decoration-color: $blue;
-                cursor: pointer;
-            }
-        }
-    }
-
-    // expenses
-
-    .div--expenses{
-        position: relative;
-
-        .singleton-expenses{
-           display: grid;
-           grid-template-columns: repeat(4, 1fr);
-        // display: flex;
-        // justify-content: space-between;
-             
-           i{
-               color: $blue;
-           }
-
-           i.delete-exp{
-               color: $red;
-           }
-        }
-
-        .div-expenses{
-        //  display: grid;
-        //  grid-template-columns: 1fr 1fr 1fr;
-        display: flex;
-        justify-content: space-evenly;
-        position: absolute;
-        bottom: -3rem;
-        //top: 1rem;
-
-         input{
-             width: 40%;
-             border: $white;
-
-             &:focus{
-                 outline-color: $white;
-                 border-bottom: 2px solid #c4c4c4;
-             }
-         }
-        }
-    }
-}
-
-// budget form
-
-// .div-budget {
-//     display: flex;
-//     justify-content: center;
-// }
+    // }
 
 
-
-// the circle chart
-#chartContainer{
-    background-color: $blue;
 }

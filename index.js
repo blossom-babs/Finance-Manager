@@ -1,7 +1,12 @@
 console.log(`The very first line: connected`);
 // z9HFex3z94$5@Ep
+
+//    AOS.init();
+
 class UI {
     constructor() {
+        this.userValue = document.getElementById('getUserValue')
+        this.userName = document.getElementById('userName')
         this.budgetForm = document.getElementById("budget-form");
         this.budgetName = document.getElementById('budget-name')
         this.budgetInput = document.getElementById("budget-input");
@@ -228,59 +233,20 @@ class UI {
         this.ShowBalance()
     }
 
-    // display all
-    displayAll() {
-        const expensesToDisplay = this.itemList
-        const incomesToDisplay = this.budgetList
 
-        const destructureExpense = Object.assign({}, ...expensesToDisplay)
-        const destructureIncome = Object.assign({}, ...incomesToDisplay)
+       //set user name
 
-        const allExpense = {
-            ...destructureExpense,
-            ...destructureIncome
-        }
-        this.addAll(allExpense)
-    }
+       setUserName() {
+           const username = this.userValue.value
+           this.userName.innerHTML = username
+           this.userValue.value = ''
+           this.scrollTo()
 
-    //add all expense
+       }
 
-    addAll(allExpense) {
-        const allDiv = document.createElement('div')
-        allDiv.classList.add('all-design')
-
-        if (`${allExpense.title}` === 'undefined' || `${allExpense.amount}` === 'undefined') {
-            allDiv.innerHTML = `
-            <div class='all--income'>
-            <h6 class="topics">Income</h6>
-            <h6>${allExpense.budgetAmount}</h6>
-            <h6>${allExpense.budgetName}</h6>
-            </div>
-            `
-        } else if (`${allExpense.budgetAmount}` === 'undefined' || `${allExpense.budgetName}` === 'undefined') {
-            allDiv.innerHTML = `
-            <div class='all--expense'>
-        <h6 class="topics">Expenses</h6>
-        <h6>${allExpense.title}</h6>
-        <h6>${allExpense.amount}</h6>
-        </div>
-            `
-        } else
-            allDiv.innerHTML = `
-        <div class='all--expense'>
-        <h6 class="topics">Expenses</h6>
-        <h6>${allExpense.title}</h6>
-        <h6>${allExpense.amount}</h6>
-        </div>
-       <div class='all--income'>
-       <h6 class="topics">Income</h6>
-       <h6>${allExpense.budgetAmount}</h6>
-       <h6>${allExpense.budgetName}</h6>
-       </div>
-        `
-        this.allList.appendChild(allDiv)
-
-    }
+       scrollTo() {
+           window.scrollTo(300, 1500);
+       }
 
 
 }
@@ -290,14 +256,10 @@ function eventListeners() {
     const expenseForm = document.getElementById('expense-form')
     const expenseList = document.getElementById('expense-list')
     const incomeList = document.getElementById('income-list')
-    const displayExpense = document.getElementById('div--expenses')
-    const expense = document.getElementById('dashboard-expenses')
-    const displayIncome = document.getElementById('div--income')
-    const income = document.getElementById('dashboard-income')
-    const displayAll = document.getElementById('div--all')
-    const circleChart = document.getElementById('circle-chart')
-    const all = document.getElementById('dashboard-all')
-
+    const userForm = document.getElementById('getUserName')
+   
+   
+  
     // instantiating the ui class
     const ui = new UI();
 
@@ -306,6 +268,12 @@ function eventListeners() {
         e.preventDefault();
         ui.submitBudgetForm();
     });
+
+    // getting the user name
+    userForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        ui.setUserName();
+    })
 
     // working on the expense form
     expenseForm.addEventListener('submit', function (e) {
@@ -331,28 +299,6 @@ function eventListeners() {
         }
     })
 
-    //display expense
-    expense.addEventListener('click', () => {
-        displayAll.classList.add('d-none')
-        displayIncome.classList.add('d-none')
-        displayExpense.classList.remove('d-none')
-    })
-
-    //display income
-    income.addEventListener('click', () => {
-        displayAll.classList.add('d-none')
-        displayExpense.classList.add('d-none')
-        displayIncome.classList.remove('d-none')
-    })
-
-    //display all expenses
-    all.addEventListener('click', () => {
-        displayExpense.classList.add('d-none')
-        displayIncome.classList.add('d-none')
-        displayAll.classList.remove('d-none')
-
-        ui.displayAll()
-    })
 
 }
 
